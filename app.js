@@ -2,6 +2,8 @@ const express = require('express')
 const ejsMate = require("ejs-mate")
 const path = require('path')
 const methodOverride = require('method-override')
+const dayjs = require('dayjs')
+
 
 const app = express()
 
@@ -17,6 +19,10 @@ app.get('/', async (req, res) => {
 
 app.get('/CPPRestroom', async (req, res) => {
     res.render('CPPRestroom/show')
+})
+
+app.get('/TestReview', async (req, res) => {
+    res.render('TestReview/show')
 })
 
 app.listen(3000, () => {
