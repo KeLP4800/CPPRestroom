@@ -17,13 +17,16 @@
         <textarea rows="3" cols="45" name="review"></textarea><br>
     </div>
     <div>
-        <button onclick="displayDate()">Post</button>
+        
+        <button onclick="getDate()">Post</button>
         <p id="datePosted"></p>
+
         <script>
-            function displayDate(){
-                document.getElementById("datePosted").innerHTML = "Review posted on: " + Date();
+            function getDate(){
+                document.getElementById("datePosted").innerHTML="Posted on: " + Date()
             }
         </script>
+        
 
     </div>
 
