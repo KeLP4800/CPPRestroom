@@ -27,6 +27,11 @@ app.get('/', async (req, res) => {
     res.render('home')
 })
 
+app.get('/restrooms', async (req, res) => {
+    const restrooms = await Restroom.find({});
+    res.render('CPPRestroom/index', { restrooms })
+})
+
 app.get('/makeCPPRestroom', async (req, res) => {
     const restroom = new Restroom({ title: "Restroom 1", description: "very clean", location: "bldg 163" })
     await restroom.save();
