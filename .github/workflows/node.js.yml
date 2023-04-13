@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@v0.1.9
+        uses: appleboy/ssh-action@master
         with:
           host: ec2-54-193-165-196.us-west-1.compute.amazonaws.com
           username: ec2-user
