@@ -1,1 +1,2 @@
 this file, if up on the ec2 instance shows that the github actions is up and running
+test 2
