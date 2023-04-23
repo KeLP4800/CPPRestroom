@@ -3,40 +3,27 @@
     <div class="row">
         <div class="col-6">
             <div class="card mb-3">
-                <img src="<%= campground.image %>" alt="">
+                <img src="<%= restroom.image %>" alt="">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <%= campground.Title %>
+                        <%= restroom.title %>
                     </h5>
                     <p class="card-text">
-                        <%= campground.description %>
+                        <%= restroom.description %>
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item text-muted">
-                        <%= campground.location %>
-                    </li>
-                    <li class="list-group-item">
-                        $<%= campground.price %>/per night
+                        <%= restroom.location %>
                     </li>
                 </ul>
-                <div class="card-body">
-                    <a href="/campgrounds/<%=campground._id%>/edit" class="btn btn-primary">Edit </a>
-                    <form class="d-inline" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger">DELETE</button>
-                    </form>
-                </div>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>
             </div>
 
         </div>
         <div class="col-6">
             <h2 class="mb-3">Leave a Review</h2>
 
-            <form action="/campgrounds/<%= campground._id %>/reviews" method="POST" class="mb-3 validated-form"
-                novalidate>
+            <form action="/restrooms/<%= restroom._id %>/reviews" method="POST" class="mb-3 validated-form" novalidate>
                 <div class="mb-3">
                     <label class="form-label" for="range">Rating</label>
                     <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="range">
@@ -50,7 +37,7 @@
             </form>
 
 
-            <% for(let review of campground.reviews) { %>
+            <% for(let review of restroom.reviews) { %>
                 <div class="mb-3 card">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -60,10 +47,6 @@
                             Review: <%= review.body %>
 
                         </p>
-                        <form action="/campgrounds/<%= campground._id%>/reviews/<%= review._id%>?_method=DELETE"
-                            method="POST">
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </form>
                     </div>
 
                 </div>
